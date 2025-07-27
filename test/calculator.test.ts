@@ -23,7 +23,7 @@ describe("calculator",()=>{
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(30)
-    })
+    });
 
     test("should calculator function return difference of two numbers",()=>{
         let input : string = "10-20";
@@ -31,5 +31,13 @@ describe("calculator",()=>{
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(-10)
-    })
+    });
+
+    test("should calculator function return multiplication of three numbers",()=>{
+        let input : string = "2*3*4";
+        
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(24)
+    });
 });
