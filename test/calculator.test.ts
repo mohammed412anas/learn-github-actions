@@ -75,5 +75,13 @@ describe("calculator",()=>{
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(Infinity)
+    });
+
+    test("should calculate function return same value if one number is given",()=>{
+        let input : string = "1`2'3`4`5'6`7'8`9";
+
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(123456789)
     })
 });
