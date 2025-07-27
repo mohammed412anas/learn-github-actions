@@ -1,6 +1,6 @@
 import promptSync from "prompt-sync";
 import {evaluate} from "mathjs"
-import { removeQuotes } from "./filter-expression";
+import { printMessage, removeQuotes } from "./filter-expression";
 
 export function takeInput():string{
     const prompt = promptSync();
@@ -19,3 +19,14 @@ export function calculate(expression:string):number|string|object{
     }
 }
 
+export function runApp():boolean{
+    printMessage();
+    while(true){
+        let expression = removeQuotes(takeInput());
+        if(expression.toLowerCase()!="exit"){
+            calculate(expression);
+        }else{
+            return false;
+        }
+    }
+}
