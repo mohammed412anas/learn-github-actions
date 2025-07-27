@@ -12,7 +12,7 @@ describe("calculator",()=>{
 
         let input : string = takeInput();
 
-        expect(input).toEqual("20+10");
+        expect(input).toEqual("10+20");
     
     });
 });
