@@ -1,5 +1,6 @@
 import PromptSync from "prompt-sync";
-import { takeInput } from "../src/calculator";
+import { calculate, takeInput } from "../src/calculator";
+import { removeQuotes } from "../src/filter-expression";
 
 
 jest.mock("prompt-sync");
@@ -15,4 +16,12 @@ describe("calculator",()=>{
         expect(input).toEqual("10+20");
     
     });
+
+    test("should calculator function return sum of two numbers",()=>{
+        let input : string = "10+20";
+        
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(30)
+    })
 });
