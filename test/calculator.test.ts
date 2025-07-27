@@ -24,4 +24,12 @@ describe("calculator",()=>{
 
         expect(result).toEqual(30)
     })
+
+    test("should calculator function return difference of two numbers",()=>{
+        let input : string = "10-20";
+        
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(-10)
+    })
 });
