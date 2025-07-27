@@ -50,10 +50,22 @@ describe("calculator",()=>{
     });
 
     test("should calculate function calculate the expression ",()=>{
-        let input : string = "2-3+4*5/2^(2%4)!+sqrt(4)";
+        let input : string = "2-3```+4*`5/2^(`2%4)'!+sqrt(4'`')";     
         
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(6)
+    });
+    
+    test("should calculate function return the error contain in the expression ",()=>{
+        let input1 : string = "2 - 3+ 4 * 5/ 2^ (2 % 4)! + sqrt(4 ";
+        let result1 : string = calculate(removeQuotes(input1)) as string;
+
+        let input2 : string = "2 - 3+ 4 + * + 5/ 2^ (2 % 4)! + sqrt(4)"; 
+        let result2 : string = calculate(removeQuotes(input2)) as string
+
+        expect(result1).toEqual("Invalid expression : Parenthesis ) expected (char 36)");
+        expect(result2).toEqual("Invalid expression : Value expected (char 12)")
+
     });
 });
