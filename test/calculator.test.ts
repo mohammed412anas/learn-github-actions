@@ -17,7 +17,7 @@ describe("calculator",()=>{
     
     });
 
-    test("should calculator function return sum of two numbers",()=>{
+    test("should calculate function return sum of two numbers",()=>{
         let input : string = "10+20";
         
         let result : number = calculate(removeQuotes(input)) as number;
@@ -25,7 +25,7 @@ describe("calculator",()=>{
         expect(result).toEqual(30)
     });
 
-    test("should calculator function return difference of two numbers",()=>{
+    test("should calculate function return difference of two numbers",()=>{
         let input : string = "10-20";
         
         let result : number = calculate(removeQuotes(input)) as number;
@@ -33,11 +33,27 @@ describe("calculator",()=>{
         expect(result).toEqual(-10)
     });
 
-    test("should calculator function return multiplication of three numbers",()=>{
+    test("should calculate function return multiplication of three numbers",()=>{
         let input : string = "2*3*4";
         
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(24)
+    });
+
+    test("should calculate function return multiplication of three numbers",()=>{
+        let input : string = "2*3*4";
+        
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(24)
+    });
+
+    test("should calculate function calculate the expression ",()=>{
+        let input : string = "2-3+4*5/2^(2%4)!+sqrt(4)";
+        
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(6)
     });
 });
