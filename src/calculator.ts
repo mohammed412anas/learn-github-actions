@@ -1,7 +1,21 @@
 import promptSync from "prompt-sync";
+import {evaluate} from "mathjs"
+import { removeQuotes } from "./filter-expression";
 
 export function takeInput():string{
     const prompt = promptSync();
-    console.log(`Welcome to simple calculator app`)
     return prompt(`Enter the expression to calculate : `)
 }
+export function calculate(expression:string):number|string|object{
+    
+    try{
+        let result :number =evaluate(expression);
+        console.log(`Result : ${result}`)
+        return result; 
+    }
+    catch(err){
+        console.log(`Invalid expression : ${(err as Error).message}`)
+        return `Invalid expression : ${(err as Error).message}`;
+    }
+}
+
