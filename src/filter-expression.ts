@@ -1,6 +1,6 @@
 import { takeInput } from "./calculator";
 
-export function printMessage(){
+export function printMessage():boolean{
 console.log(`
 Welcome to simple calculator the app have the following features.
  Basic Operations
@@ -19,7 +19,12 @@ Welcome to simple calculator the app have the following features.
   1.Evaluate math expression.
 `
     )
+    return true
 };
 
+export function removeQuotes(expression : string):string{
+    expression = expression.replace(/["'`]/g,"")
+    return expression;
+}
 
 
