@@ -68,4 +68,12 @@ describe("calculator",()=>{
         expect(result2).toEqual("Invalid expression : Value expected (char 12)")
 
     });
+
+    test("should calculate function return Infinity while calculating large numbers",()=>{
+        let input : string = "1000!"
+
+        let result : number = calculate(removeQuotes(input)) as number;
+
+        expect(result).toEqual(Infinity)
+    })
 });
