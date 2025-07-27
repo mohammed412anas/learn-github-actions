@@ -17,6 +17,8 @@ Welcome to simple calculator the app have the following features.
 
  Expression Evaluation
   1.Evaluate math expression.
+
+(Enter 'exit' to exit from app)
 `
     )
     return true
