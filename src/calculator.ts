@@ -30,3 +30,7 @@ export function runApp():boolean{
         }
     }
 }
+
+if(require.main===module){
+    runApp()
+}
