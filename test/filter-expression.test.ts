@@ -1,4 +1,4 @@
-import {removeQuotes} from "../src/filter-expression";
+import {printMessage, removeQuotes} from "../src/filter-expression";
 
 describe("filter-expression",()=>{
     test("should remove quotes from the expression",()=>{
@@ -7,5 +7,11 @@ describe("filter-expression",()=>{
         let result : string = removeQuotes(input);
 
         expect(result).toEqual("10 + 20/10-10")
+    })
+
+    test("should printMessage console welcome message and featre of calculator app",()=>{
+        let message : boolean = printMessage()
+        
+        expect(message).toBeTruthy()
     })
 })
