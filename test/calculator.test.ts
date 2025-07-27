@@ -1,5 +1,5 @@
 import PromptSync from "prompt-sync";
-import { calculate, takeInput } from "../src/calculator";
+import { calculate, runApp, takeInput } from "../src/calculator";
 import { removeQuotes } from "../src/filter-expression";
 
 
@@ -83,5 +83,18 @@ describe("calculator",()=>{
         let result : number = calculate(removeQuotes(input)) as number;
 
         expect(result).toEqual(123456789)
+    });
+
+    test("should runApp run the app continuously until prompted input value is exit",()=>{
+        mockedPrompt    
+            .mockReturnValueOnce("10+20+30")
+            .mockReturnValueOnce("40+50+60")
+            .mockReturnValueOnce("70+80+90")
+            .mockReturnValueOnce("100+200+300")
+            .mockReturnValueOnce("EXIT")
+            
+        let isAppRunning : boolean = runApp()
+
+        expect(isAppRunning).toBeFalsy()
     })
 });
