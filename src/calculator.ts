@@ -2,9 +2,9 @@ import promptSync from "prompt-sync";
 import {evaluate} from "mathjs"
 import { printMessage, removeQuotes } from "./filter-expression";
 
-export function takeInput():string{
+export function takeInput(description : string):string{
     const prompt = promptSync();
-    return prompt(`Enter the expression to calculate : `)
+    return prompt(description)
 }
 export function calculate(expression:string):number|string|object{
     
@@ -22,7 +22,7 @@ export function calculate(expression:string):number|string|object{
 export function runApp():boolean{
     printMessage();
     while(true){
-        let expression = removeQuotes(takeInput());
+        let expression = removeQuotes(takeInput(`Enter the expression to calculate : `));
         if(expression.toLowerCase()!="exit"){
             calculate(expression);
         }else{

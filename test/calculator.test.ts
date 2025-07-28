@@ -11,7 +11,7 @@ describe("calculator",()=>{
     test("should fail",()=>{
         mockedPrompt.mockReturnValueOnce("10+20");
 
-        let input : string = takeInput();
+        let input : string = takeInput(`Enter the expression to compute: `);
 
         expect(input).toEqual("10+20");
     
