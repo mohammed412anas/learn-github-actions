@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "cover": "npx jest --coverage",
-    "go": "ts-node src/calculator.ts"
+    "coverage": "npx jest --coverage",
+    "dev": "ts-node src/calculator.ts"
   },
   "keywords": [],
   "author": "",
