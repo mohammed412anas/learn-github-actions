@@ -7,6 +7,10 @@ let mockedPrompt : jest.Mock = jest.fn();
 (PromptSync as jest.Mock).mockReturnValue(mockedPrompt);
 
 describe("test suit of manage-operands-and-operations.test.ts module",()=>{
+    let operation: Operations;
+    beforeEach(()=>{
+        operation = new Operations;
+    })
     test("should validateOperends take input value 5 as string  and check input is number and return 5 as number",()=>{
         let input : string = "5";
 
@@ -53,7 +57,6 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
             .mockReturnValueOnce("3")
             .mockReturnValueOnce("4")
             .mockReturnValueOnce("exit");
-        let operation = new Operations;
 
         let result : number = manageOperendsAndOperations("addition",operation.addition);
 
@@ -62,10 +65,23 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
 
     test("should take input value 'exit' and return '0'",()=>{
         mockedPrompt.mockReturnValueOnce("exit");
-        let operation = new Operations;
 
         let result : number = manageOperendsAndOperations("no operation is performed ",operation.addition);
         
         expect(result).toEqual(0);
+    });
+
+    test("should take series of valid inputs '2', '3' and '4' and invalid inputs 'hi' and 'hello' and take 'exit' as final prompt return '9'",()=>{  
+        mockedPrompt
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("3")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("hi")
+            .mockReturnValueOnce("hello")
+            .mockReturnValueOnce("exit");
+
+        let result : number = manageOperendsAndOperations("addition",operation.addition);
+
+        expect(result).toEqual(9);
     });
 });
