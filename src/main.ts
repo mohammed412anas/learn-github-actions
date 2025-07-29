@@ -34,6 +34,8 @@ export function mathOpreations():number{
             return manageOperendsAndOperations("substraction",operations.substraction);
         case '3':
             return manageOperendsAndOperations("multiplication",operations.multiplication);
+        case '4':
+            return manageOperendsAndOperations("division",operations.division);
         default:
             return 0;
             
