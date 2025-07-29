@@ -1,5 +1,6 @@
 import { manageOperendsAndOperations, validateOprends } from "../src/manage-operands-and-operations";
 import PromptSync from "prompt-sync";
+import { Operations } from "../src/utils/operations";
 
 jest.mock("prompt-sync")
 let mockedPrompt : jest.Mock = jest.fn();
@@ -44,5 +45,18 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
         let result : string = validateOprends(initialInput,"no operations will be performed",1,0) as string;
 
         expect(result).toEqual("exit");
+    });
+
+    test("should perform addition by prompting user for the series of inputs '2', '3' and '4' and take 'exit' as prompt and return the '5' ", ()=>{
+        mockedPrompt
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("3")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("exit");
+        let operation = new Operations;
+
+        let result : number = manageOperendsAndOperations("addition",operation.addition);
+
+        expect(result).toEqual(9);
     });
 });
