@@ -5,27 +5,33 @@ describe("test suit of operation.ts module",()=>{
     beforeEach(()=>{
         calculation = new Operations;
     })
-    test("should addition method of class Operations add '2' and '3' and return '5'",()=>{
+    test("should add '2' and '3' and return '5'",()=>{
         let add : number = calculation.addition(2,3);
 
         expect(add).toEqual(5)
     });
 
-    test("should substraction method of class Operations substract '3' from '2' and return '-1'",()=>{
+    test("should substract '3' from '2' and return '-1'",()=>{
         let substract : number = calculation.substraction(2,3);
 
         expect(substract).toEqual(-1);
     });
 
-    test("should substraction method of class Operations substract '3' from '0' and return '3'",()=>{
+    test("should substract '3' from '0' and return '3'",()=>{
         let substract: number = calculation.substraction(0,3);
 
         expect(substract).toEqual(3);
     });
 
-    test("should multiplication method of class Operations multiply '3' and '4' and return '12'",()=>{
+    test("should multiply '3' and '4' and return '12'",()=>{
         let multiple : number = calculation.multiplication(3,4);
 
         expect(multiple).toEqual(12);
+    });
+
+    test("should divide '14' by '2' and return '7'",()=>{
+        let divide : number = calculation.division(14,2);
+
+        expect(divide).toEqual(7);
     });
 });
