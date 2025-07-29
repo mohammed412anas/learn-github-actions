@@ -30,10 +30,12 @@ export function mathOpreations():number{
     switch(userChoice){
         case '1':
             return manageOperendsAndOperations("addition",operations.addition);
+        case '2':
+            return manageOperendsAndOperations("substraction",operations.substraction);
         default:
             return 0;
             
-    }
-}
+    };
+};
 
 
