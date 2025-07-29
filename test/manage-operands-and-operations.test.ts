@@ -59,4 +59,13 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
 
         expect(result).toEqual(9);
     });
+
+    test("should take input value 'exit' and return '0'",()=>{
+        mockedPrompt.mockReturnValueOnce("exit");
+        let operation = new Operations;
+
+        let result : number = manageOperendsAndOperations("no operation is performed ",operation.addition);
+        
+        expect(result).toEqual(0);
+    });
 });
