@@ -18,4 +18,16 @@ describe("test suit of main.ts module",()=>{
         expect(sum).toEqual(5);
     });
 
+    test("should take first mocked prompt value as '2' and perform substraction between mocked prompt value '10' and mocked prompt value '5' and return '5'",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("10")
+            .mockReturnValueOnce("5")
+            .mockReturnValueOnce("exit");
+
+        let difference : number = mathOpreations();
+
+        expect(difference).toEqual(5);
+    });
+
 })
