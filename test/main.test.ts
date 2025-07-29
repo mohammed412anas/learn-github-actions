@@ -27,4 +27,16 @@ describe("test suit of main.ts module",()=>{
         expect(result).not.toEqual("5");
         expect(result).toEqual(5);
     });
+
+    test("should not accept non integer like 'hi', 'hello', contiuously prompt user to give valid input '5' and return 5 as number.",()=>{
+        let initialInput : string = 'hi';
+        mockedPrompt    
+            .mockReturnValueOnce("hello")
+            .mockReturnValueOnce("5");
+
+        let result : number = validateOprends(initialInput,"addition",1,0) as number;
+
+        expect(result).toEqual(5);
+            
+    })
 })
