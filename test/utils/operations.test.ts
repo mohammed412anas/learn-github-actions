@@ -11,9 +11,15 @@ describe("test suit of operation.ts module",()=>{
         expect(add).toEqual(5)
     });
 
-    test("should substraction method of class Operations substract '3' from '2' and return '1'",()=>{
+    test("should substraction method of class Operations substract '3' from '2' and return '-1'",()=>{
         let add : number = calculation.substraction(2,3);
 
         expect(add).toEqual(-1);
+    });
+
+    test("should substraction method of class Operations substract '3' from '0' and return '3'",()=>{
+        let add : number = calculation.substraction(0,3);
+
+        expect(add).toEqual(3);
     });
 });
