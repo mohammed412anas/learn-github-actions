@@ -34,4 +34,10 @@ describe("test suit of operation.ts module",()=>{
 
         expect(divide).toEqual(7);
     });
+
+    test("should not divide '2' by '0' and return '2' ",()=>{
+        let divide : number = calculation.division(2,0);
+
+        expect(divide).toEqual(2);
+    });
 });
