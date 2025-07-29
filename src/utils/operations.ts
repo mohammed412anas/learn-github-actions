@@ -5,6 +5,9 @@ export class Operations {
     };
 
     substraction(a: number, b: number): number {
+        if(a===0){
+            return b-a;
+        }
         return a - b;
     };
 }
