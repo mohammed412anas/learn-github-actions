@@ -12,14 +12,20 @@ describe("test suit of operation.ts module",()=>{
     });
 
     test("should substraction method of class Operations substract '3' from '2' and return '-1'",()=>{
-        let add : number = calculation.substraction(2,3);
+        let substract : number = calculation.substraction(2,3);
 
-        expect(add).toEqual(-1);
+        expect(substract).toEqual(-1);
     });
 
     test("should substraction method of class Operations substract '3' from '0' and return '3'",()=>{
-        let add : number = calculation.substraction(0,3);
+        let substract: number = calculation.substraction(0,3);
 
-        expect(add).toEqual(3);
+        expect(substract).toEqual(3);
+    });
+
+    test("should multiplication method of class Operations multiply '3' and '4' and return '12'",()=>{
+        let multiple : number = calculation.multiplication(3,4);
+
+        expect(multiple).toEqual(12);
     });
 });
