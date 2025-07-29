@@ -88,7 +88,7 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
     test("should take 'multiplication' as argument and return '1'",()=>{
         let operation : string = "multiplication";
         
-        let result : number = setupInitialResult(operation);
+        let result : number = setupInitialResult(operation,"0");
 
         expect(result).toEqual(1)
     });

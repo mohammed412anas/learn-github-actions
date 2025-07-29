@@ -42,13 +42,13 @@ describe("test suit of operation.ts module",()=>{
     });
 
     test("should divide '3' by '2' and return reminader as '2' ",()=>{
-        let reminder : number = calculation.modulus(3,2);
+        let reminder : number = calculation.modulo(3,2);
 
         expect(reminder).toEqual(1);
     });
 
     test("should not divide '3' by '0' and  and return '3' with a console in terminal",()=>{
-        let reminder : number = calculation.modulus(3,0);
+        let reminder : number = calculation.modulo(3,0);
 
         expect(reminder).toEqual(3);
     });
