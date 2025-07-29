@@ -5,8 +5,9 @@ export function manageOperendsAndOperations(oper:string,
 ):number{
     
     var index : number = 1;
-    var initialResult : number = setupInitialResult(oper);
+    
     let input :string = takeInput(`Input ${index} to perform ${oper} : `);
+    var initialResult : number = setupInitialResult(oper);
     performOperation()
     function performOperation(){
         if(!isNaN(Number(input))){
