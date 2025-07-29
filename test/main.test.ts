@@ -48,4 +48,15 @@ describe("test suit of main.ts module",()=>{
         expect(result).toEqual("exit");
     });
 
+    test("should take multiple invalid inputs 'Anas' and 'Mohammed' and take valid input 'exit' and return 'exit'",()=>{
+        let initialInput : string = 'Anas';
+        mockedPrompt
+            .mockReturnValueOnce("Mohammed")
+            .mockReturnValueOnce("exit");
+
+        let result : string = validateOprends(initialInput,"no operations will be performed",1,0) as string;
+
+        expect(result).toEqual("exit");
+    });
+
 })
