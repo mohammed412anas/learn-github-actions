@@ -1,4 +1,4 @@
-import { manageOperendsAndOperations, validateOprends } from "../src/manage-operands-and-operations";
+import { manageOperendsAndOperations, setupInitialResult, validateOprends } from "../src/manage-operands-and-operations";
 import PromptSync from "prompt-sync";
 import { Operations } from "../src/utils/operations";
 
@@ -83,5 +83,13 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
         let result : number = manageOperendsAndOperations("addition",operation.addition);
 
         expect(result).toEqual(9);
+    });
+
+    test("should take 'multiplication' as argument and return '1'",()=>{
+        let operation : string = "multiplication";
+        
+        let result : number = setupInitialResult(operation);
+
+        expect(result).toEqual(1)
     });
 });

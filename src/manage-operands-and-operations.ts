@@ -5,7 +5,7 @@ export function manageOperendsAndOperations(oper:string,
 ):number{
     
     var index : number = 1;
-    var initialResult : number = 0;
+    var initialResult : number = setupInitialResult(oper);
     let input :string = takeInput(`Input ${index} to perform ${oper} : `);
     performOperation()
     function performOperation(){
@@ -28,7 +28,7 @@ export function manageOperendsAndOperations(oper:string,
     return initialResult;
 }
 export function validateOprends(input:string,oper:string,index : number,initialResult:number):number|string{
-    if(isNaN(Number(input))){
+    if(isNaN(Number(input)) || input.length === 0){
         if(input.toLowerCase() === "exit"){
             console.log(`Result obtained by performing ${oper} : ${initialResult}`);
             return ("exit")
@@ -37,5 +37,14 @@ export function validateOprends(input:string,oper:string,index : number,initialR
     }
     else {
         return Number(input);
-    }
-}
+    };
+};
+
+export function setupInitialResult(oper:string):number{
+    switch(oper){
+        case "multiplication" :
+            return 1;
+        default:
+            return 0;
+    };
+};
