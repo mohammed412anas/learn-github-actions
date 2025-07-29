@@ -1,4 +1,4 @@
-import { Operations } from "../src/utils/operations";
+import { Operations } from "../../src/utils/operations";
 
 describe("test suit of operation.ts module",()=>{
     test("should addition method of class Operations add '2' and '3' and return '5'",()=>{
