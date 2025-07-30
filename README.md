@@ -35,7 +35,7 @@ npm install
 
 ```bash
 # To run the application in CLI run the command from the project directory.
-npm run go
+npm run dev
 # or
 tsc && node dist/calculator.js
 ```
@@ -75,7 +75,7 @@ cd calculator
 npm run test
 
 # To see the code coverage of the project run the below command in terminal.
-npm run cover
+npm run coverage
 
 ```
 
