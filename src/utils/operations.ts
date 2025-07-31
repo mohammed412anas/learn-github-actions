@@ -34,4 +34,8 @@ export class Operations {
     power(a: number, b: number): number {
         return a ** b;
     };
+
+    square_root(a : number, b : number):number{
+        return Math.sqrt(b);
+    };
 };
