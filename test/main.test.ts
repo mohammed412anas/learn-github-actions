@@ -64,7 +64,19 @@ describe("test suit of main.ts module",()=>{
         let division : number = mathOpreations();
 
         expect(division).toEqual(0);
-    })
+    });
+
+    test("should take first prompt value as 6 and perform exponential multiplication '4' and '2' and return result as '16' and exit from app.",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("6")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("exit")
+
+        let exponent : number = mathOpreations();
+
+        expect(exponent).toEqual(16);
+    });
 
 
 })
