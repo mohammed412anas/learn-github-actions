@@ -36,6 +36,8 @@ export function mathOpreations():number{
             return manageOperendsAndOperations("multiplication",operations.multiplication);
         case '4':
             return manageOperendsAndOperations("division",operations.division);
+        case '5':
+            return manageOperendsAndOperations("modulo",operations.modulo);
         default:
             return 0;
             
