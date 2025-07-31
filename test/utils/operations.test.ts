@@ -58,4 +58,10 @@ describe("test suit of operation.ts module",()=>{
 
         expect(exponent).toEqual(9);
     });
+
+    test("should return the square root of 4 as 2",()=>{
+        let sqrt : number = calculation.square_root(4,2);
+
+        expect(sqrt).toEqual(2);
+    });
 });
