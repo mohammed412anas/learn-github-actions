@@ -52,6 +52,18 @@ describe("test suit of main.ts module",()=>{
         let division : number = mathOpreations();
 
         expect(division).toEqual(6);
+    });
+
+    test("should take first prompt value as 5 and perform modulo division between '12' and '2' and return result '0' and exit from app.",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("5")
+            .mockReturnValueOnce("12")
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("exit")
+
+        let division : number = mathOpreations();
+
+        expect(division).toEqual(0);
     })
 
 
