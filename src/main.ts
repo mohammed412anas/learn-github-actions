@@ -38,6 +38,8 @@ export function mathOpreations():number{
             return manageOperendsAndOperations("division",operations.division);
         case '5':
             return manageOperendsAndOperations("modulo",operations.modulo);
+        case '6':
+            return manageOperendsAndOperations("exponintial operation",operations.power);
         default:
             return 0;
             
