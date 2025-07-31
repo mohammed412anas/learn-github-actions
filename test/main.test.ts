@@ -30,4 +30,15 @@ describe("test suit of main.ts module",()=>{
         expect(difference).toEqual(5);
     });
 
+    test("should take first prompt value as 3 and perform multiplication between '4' and '2' and return result '8' and exit from app.",()=>{})
+    mockedPrompt
+        .mockReturnValueOnce("3")
+        .mockReturnValueOnce("4")
+        .mockReturnValueOnce("2")
+        .mockReturnValueOnce("exit")
+
+    let multiply : number = mathOpreations();
+
+    expect(multiply).toEqual(8);
+
 })
