@@ -30,15 +30,29 @@ describe("test suit of main.ts module",()=>{
         expect(difference).toEqual(5);
     });
 
-    test("should take first prompt value as 3 and perform multiplication between '4' and '2' and return result '8' and exit from app.",()=>{})
-    mockedPrompt
-        .mockReturnValueOnce("3")
-        .mockReturnValueOnce("4")
-        .mockReturnValueOnce("2")
-        .mockReturnValueOnce("exit")
+    test("should take first prompt value as 3 and perform multiplication between '4' and '2' and return result '8' and exit from app.",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("3")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("exit")
 
-    let multiply : number = mathOpreations();
+        let multiply : number = mathOpreations();
 
-    expect(multiply).toEqual(8);
+        expect(multiply).toEqual(8);
+    });
+
+    test("should take first prompt value as 4 and perform division between '12' and '2' and return result '6' and exit from app.",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("12")
+            .mockReturnValueOnce("2")
+            .mockReturnValueOnce("exit")
+
+        let division : number = mathOpreations();
+
+        expect(division).toEqual(6);
+    })
+
 
 })
