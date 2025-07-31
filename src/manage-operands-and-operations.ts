@@ -16,13 +16,14 @@ export function manageOperendsAndOperations(oper:string,
             if(initialResult === 0 && index ===1 ){
                 initialResult  = setupInitialResult(oper, input);
                 if(oper === "modulo"){ value += 1}
+                else if (oper === "exponintial operation" ){value = 1}
                 console.log(`Initial operand obtained to perform ${oper} is : `,
                 `${initialResult = callBack(initialResult,value)}`);
             }else{
                 console.log(`Result obtained by performing ${oper}`,
                     ` between ${initialResult} and ${value} is : `,
                     `${initialResult = callBack(initialResult,value)}`);
-            }
+            };
             index++;
             input = takeInput(`Input ${index} to perform ${oper} : `);
             return performOperation()
@@ -56,6 +57,8 @@ export function setupInitialResult(oper:string, firstValue:string):number{
             return ((validateOprends(firstValue)as number) ** 2);
         case "modulo":
             return ((validateOprends(firstValue)as number));
+        case "exponintial operation":
+            return (validateOprends(firstValue)as number);
         default:
             return 0;
     };
