@@ -30,4 +30,8 @@ export class Operations {
         }
         return a % b;
     };
+
+    power(a: number, b: number): number {
+        return a ** b;
+    };
 };
