@@ -6,16 +6,23 @@ export function manageOperendsAndOperations(oper:string,
     
     var index : number = 1;
     
-    let input :string = takeInput(`Input ${index} to perform ${oper} : `);
-    var initialResult : number = setupInitialResult(oper, input);
+    var input :string = takeInput(`Input ${index} to perform ${oper} : `);
+    var initialResult : number = 0;
     performOperation()
     function performOperation(){
         if(!isNaN(Number(input))){
             let validatedResult : number|string = validateOprends(input,oper,index,initialResult);
             let value :number = validatedResult as number;
-            console.log(`Result obtained by performing ${oper}`,
-                ` between ${initialResult} and ${value} is : `,
+            if(initialResult === 0 && index ===1 ){
+                initialResult  = setupInitialResult(oper, input);
+                if(oper === "modulo"){ value += 1}
+                console.log(`Initial operand obtained to perform ${oper} is : `,
                 `${initialResult = callBack(initialResult,value)}`);
+            }else{
+                console.log(`Result obtained by performing ${oper}`,
+                    ` between ${initialResult} and ${value} is : `,
+                    `${initialResult = callBack(initialResult,value)}`);
+            }
             index++;
             input = takeInput(`Input ${index} to perform ${oper} : `);
             return performOperation()
@@ -46,7 +53,9 @@ export function setupInitialResult(oper:string, firstValue:string):number{
         case "multiplication" :
             return 1;
         case "division":
-            return ((validateOprends(firstValue)as number) ** 2)
+            return ((validateOprends(firstValue)as number) ** 2);
+        case "modulo":
+            return ((validateOprends(firstValue)as number));
         default:
             return 0;
     };
