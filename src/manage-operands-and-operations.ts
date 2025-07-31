@@ -19,7 +19,10 @@ export function manageOperendsAndOperations(oper:string,
                 else if (oper === "exponintial operation" ){value = 1}
                 console.log(`Initial operand obtained to perform ${oper} is : `,
                 `${initialResult = callBack(initialResult,value)}`);
-            }else{
+            }else if(oper === "square root"){
+                console.log(`Result of ${oper} of ${value} is : ${callBack(initialResult,value)}`)
+            }
+            else{
                 console.log(`Result obtained by performing ${oper}`,
                     ` between ${initialResult} and ${value} is : `,
                     `${initialResult = callBack(initialResult,value)}`);
