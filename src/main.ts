@@ -40,6 +40,8 @@ export function mathOpreations():number{
             return manageOperendsAndOperations("modulo",operations.modulo);
         case '6':
             return manageOperendsAndOperations("exponintial operation",operations.power);
+        case '7':
+            return manageOperendsAndOperations("square root", operations.square_root);
         default:
             return 0;
             
@@ -47,3 +49,4 @@ export function mathOpreations():number{
 };
 
 
+mathOpreations()
