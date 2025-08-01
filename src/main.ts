@@ -1,4 +1,4 @@
-import { takeInput } from "./calculator";
+import { calculateExpression, takeInput } from "./calculator";
 import { manageOperendsAndOperations } from "./manage-operands-and-operations";
 import { Operations } from "./utils/operations";
 
@@ -43,7 +43,9 @@ export function mathOpreations():number{
         case '7':
             return manageOperendsAndOperations("square root", operations.square_root);
         case '8':
-            return manageOperendsAndOperations("factorial",operations.factorial)
+            return manageOperendsAndOperations("factorial",operations.factorial);
+        case '9':
+            return calculateExpression();
         default:
             return 0;
             
