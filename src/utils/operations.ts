@@ -38,4 +38,10 @@ export class Operations {
     square_root(a : number, b : number):number{
         return Math.sqrt(b);
     };
+
+    factorial(a : number , b : number):number{
+        if (a === 0){return 1}
+        else if (a === 1) { return a}
+        else {return (a * this.factorial(a - 1,b))};
+    };
 };
