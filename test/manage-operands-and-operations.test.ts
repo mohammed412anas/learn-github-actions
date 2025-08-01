@@ -32,53 +32,53 @@ describe("test suit of manage-operands-and-operations.test.ts module",()=>{
             
     });
 
-    test("should should take input value as 'exit' and return 'exit'",()=>{
-        let input : string = "exit";
+    test("should should take input value as 'back' and return 'back' and come back from specific operation.",()=>{
+        let input : string = "back";
 
-        let result : string = validateOprends(input,"no operations will be performed",1,0) as string;
+        let result : string = validateOprends(input,"no operations will be performed and come back from specific operation.",1,0) as string;
 
-        expect(result).toEqual("exit");
+        expect(result).toEqual("back");
     });
 
-    test("should take multiple invalid inputs 'Anas' and 'Mohammed' and take valid input 'exit' and return 'exit'",()=>{
+    test("should take multiple invalid inputs 'Anas' and 'Mohammed' and take valid input 'back' and return 'back' and come back from specific operation.",()=>{
         let initialInput : string = 'Anas';
         mockedPrompt
             .mockReturnValueOnce("Mohammed")
-            .mockReturnValueOnce("exit");
+            .mockReturnValueOnce("back");
 
         let result : string = validateOprends(initialInput,"no operations will be performed",1,0) as string;
 
-        expect(result).toEqual("exit");
+        expect(result).toEqual("back");
     });
 
-    test("should perform addition by prompting user for the series of inputs '2', '3' and '4' and take 'exit' as prompt and return the '5' ", ()=>{
+    test("should perform addition by prompting user for the series of inputs '2', '3' and '4' and take 'back' as prompt and return the '5' and come back from specific operation.", ()=>{
         mockedPrompt
             .mockReturnValueOnce("2")
             .mockReturnValueOnce("3")
             .mockReturnValueOnce("4")
-            .mockReturnValueOnce("exit");
+            .mockReturnValueOnce("back");
 
         let result : number = manageOperendsAndOperations("addition",operation.addition);
 
         expect(result).toEqual(9);
     });
 
-    test("should take input value 'exit' and return '0'",()=>{
-        mockedPrompt.mockReturnValueOnce("exit");
+    test("should take input value 'back' and return '0' and come back from specific operation.",()=>{
+        mockedPrompt.mockReturnValueOnce("back");
 
         let result : number = manageOperendsAndOperations("no operation is performed ",operation.addition);
         
         expect(result).toEqual(0);
     });
 
-    test("should take series of valid inputs '2', '3' and '4' and invalid inputs 'hi' and 'hello' and take 'exit' as final prompt return '9'",()=>{  
+    test("should take series of valid inputs '2', '3' and '4' and invalid inputs 'hi' and 'hello' and take 'back' as final prompt return '9' and come back from specific operation.",()=>{  
         mockedPrompt
             .mockReturnValueOnce("2")
             .mockReturnValueOnce("3")
             .mockReturnValueOnce("4")
             .mockReturnValueOnce("hi")
             .mockReturnValueOnce("hello")
-            .mockReturnValueOnce("exit");
+            .mockReturnValueOnce("back");
 
         let result : number = manageOperendsAndOperations("addition",operation.addition);
 

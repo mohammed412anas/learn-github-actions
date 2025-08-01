@@ -32,7 +32,7 @@ export function manageOperendsAndOperations(oper:string,
             index++;
             input = takeInput(`Input ${index} to perform ${oper} : `);
             return performOperation();
-        }else if(input.toLowerCase() === "exit"){
+        }else if(input.toLowerCase() === "back"){
             return initialResult;
         }else{
             input = takeInput(`Input ${index} to perform ${oper} : `);
@@ -43,9 +43,9 @@ export function manageOperendsAndOperations(oper:string,
 }
 export function validateOprends(input:string,oper?:string,index ?: number,initialResult?:number):number|string{
     if(isNaN(Number(input)) || input.length === 0){
-        if(input.toLowerCase() === "exit"){
+        if(input.toLowerCase() === "back"){
             console.log(`Result obtained by performing ${oper} : ${initialResult}`);
-            return ("exit")
+            return ("back")
         }
         return validateOprends(takeInput(`Input ${index} to perform ${oper} : `),oper,index,initialResult);
     }

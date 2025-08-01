@@ -87,7 +87,7 @@ describe("test suit of calculator.ts module",()=>{
             .mockReturnValueOnce("40+50+60")
             .mockReturnValueOnce("70+80+90")
             .mockReturnValueOnce("100+200+300")
-            .mockReturnValueOnce("EXIT")
+            .mockReturnValueOnce("back")
             
         let isAppRunning : number = calculateExpression()
 

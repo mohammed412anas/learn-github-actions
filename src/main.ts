@@ -47,7 +47,7 @@ export function mathOpreations():number{
         case '9':
             return calculateExpression();
         default:
-            return 0;
+            return mathOpreations();
             
     };
 };
