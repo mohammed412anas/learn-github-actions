@@ -59,7 +59,7 @@ describe("test suit of operation.ts module",()=>{
         expect(exponent).toEqual(9);
     });
 
-    test("should return the square root of 4 as 2",()=>{
+    test("should return the square root of '4' as '2'",()=>{
         let sqrt : number = calculation.square_root(2,4);
 
         expect(sqrt).toEqual(2);
@@ -69,5 +69,11 @@ describe("test suit of operation.ts module",()=>{
         let factorial : number = calculation.factorial(4,24);
 
         expect(factorial).toEqual(24);
+    });
+
+    test("should return the factorial value as 1 if the operand is '0'",()=>{
+        let factorial : number = calculation.factorial(0,1);
+
+        expect(factorial).toEqual(1);
     });
 });
