@@ -89,5 +89,15 @@ describe("test suit of main.ts module",()=>{
         expect(square_root).toEqual(2);
     });
 
+    test("should take first prompt value as 8 and perform factorial operation for '4' and return 24 as result",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("8")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("exit");
+
+        let factorialResult : number = mathOpreations();
+
+        expect(factorialResult).toEqual(24)
+    });
 
 })

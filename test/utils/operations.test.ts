@@ -8,7 +8,7 @@ describe("test suit of operation.ts module",()=>{
     test("should add '2' and '3' and return '5'",()=>{
         let add : number = calculation.addition(2,3);
 
-        expect(add).toEqual(5)
+        expect(add).toEqual(5);
     });
 
     test("should substract '3' from '2' and return '-1'",()=>{
@@ -60,7 +60,7 @@ describe("test suit of operation.ts module",()=>{
     });
 
     test("should return the square root of '4' as '2'",()=>{
-        let sqrt : number = calculation.square_root(2,4);
+        let sqrt : number = calculation.square_root(4,2);
 
         expect(sqrt).toEqual(2);
     });
