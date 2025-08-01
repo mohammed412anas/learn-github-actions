@@ -1,5 +1,5 @@
 import PromptSync from "prompt-sync";
-import { calculate, runApp, takeInput } from "../src/calculator";
+import { calculate, calculateExpression, takeInput } from "../src/calculator";
 import { removeQuotes } from "../src/filter-expression";
 
 
@@ -89,7 +89,7 @@ describe("test suit of calculator.ts module",()=>{
             .mockReturnValueOnce("100+200+300")
             .mockReturnValueOnce("EXIT")
             
-        let isAppRunning : boolean = runApp()
+        let isAppRunning : boolean = calculateExpression()
 
         expect(isAppRunning).toBeFalsy()
     })

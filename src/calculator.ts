@@ -19,7 +19,7 @@ export function calculate(expression:string):number|string|object{
     }
 }
 
-export function runApp():boolean{  
+export function calculateExpression():boolean{  
     while(true){
         let expression = removeQuotes(takeInput(`Enter the expression to calculate : `));
         if(expression.toLowerCase()!="exit"){
@@ -30,6 +30,3 @@ export function runApp():boolean{
     }
 }
 
-if(require.main===module){
-    runApp()
-}
