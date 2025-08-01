@@ -136,4 +136,11 @@ describe("test suit of main.ts module",()=>{
         expect(expressionResult).toEqual(7);
     });
 
+    test("should take mocked prompt as 'exit' and the function mathOperations throw message as 'Came out of app' and the app should  exit.",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("exit")
+            
+        expect(()=>mathOpreations()).toThrow()
+    });
+
 });
