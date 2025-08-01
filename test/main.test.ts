@@ -66,7 +66,7 @@ describe("test suit of main.ts module",()=>{
         expect(division).toEqual(0);
     });
 
-    test("should take first prompt value as 6 and perform exponential multiplication '4' and '2' and return result as '16' and exit from app.",()=>{
+    test("should take first prompt value as 6 and perform exponential multiplication between '4' and '2' and return result as '16' and exit from app.",()=>{
         mockedPrompt
             .mockReturnValueOnce("6")
             .mockReturnValueOnce("4")
@@ -76,6 +76,17 @@ describe("test suit of main.ts module",()=>{
         let exponent : number = mathOpreations();
 
         expect(exponent).toEqual(16);
+    });
+
+    test("should take first prompt value as 7 and perform square root operation for '4' and return 2 as result",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("7")
+            .mockReturnValueOnce("4")
+            .mockReturnValueOnce("exit");
+
+        let square_root : number = mathOpreations();
+
+        expect(square_root).toEqual(2);
     });
 
 
