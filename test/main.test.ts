@@ -97,7 +97,7 @@ describe("test suit of main.ts module",()=>{
 
         let factorialResult : number = mathOpreations();
 
-        expect(factorialResult).toEqual(24)
+        expect(factorialResult).toEqual(24);
     });
 
-})
+});
