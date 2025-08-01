@@ -89,8 +89,8 @@ describe("test suit of calculator.ts module",()=>{
             .mockReturnValueOnce("100+200+300")
             .mockReturnValueOnce("EXIT")
             
-        let isAppRunning : boolean = calculateExpression()
+        let isAppRunning : number = calculateExpression()
 
-        expect(isAppRunning).toBeFalsy()
+        expect(isAppRunning).toEqual(600)
     })
 });

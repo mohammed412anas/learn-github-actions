@@ -19,13 +19,16 @@ export function calculate(expression:string):number|string|object{
     }
 }
 
-export function calculateExpression():boolean{  
+export function calculateExpression(result:number = 0):number{  
     while(true){
         let expression = removeQuotes(takeInput(`Enter the expression to calculate : `));
         if(expression.toLowerCase()!="exit"){
             calculate(expression);
+            if(!isNaN(calculate(expression) as number)){
+                result = calculate(expression) as number;
+            };
         }else{
-            return false;
+            return result;
         }
     }
 }
