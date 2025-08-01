@@ -13,6 +13,7 @@ export function manageOperendsAndOperations(oper:string,
         if(!isNaN(Number(input))){
             let validatedResult : number|string = validateOprends(input,oper,index,initialResult);
             let value :number = validatedResult as number;
+
             if(oper === "square root" || oper === "factorial"){
                 initialResult = callBack(value,initialResult);
                 console.log(`Result of ${oper} of ${value} is : ${initialResult}`);
@@ -27,9 +28,10 @@ export function manageOperendsAndOperations(oper:string,
                     ` between ${initialResult} and ${value} is : `,
                     `${initialResult = callBack(initialResult,value)}`);
             };
+
             index++;
             input = takeInput(`Input ${index} to perform ${oper} : `);
-            return performOperation()
+            return performOperation();
         }else if(input.toLowerCase() === "exit"){
             return initialResult;
         }else{
