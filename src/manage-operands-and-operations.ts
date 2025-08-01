@@ -13,14 +13,15 @@ export function manageOperendsAndOperations(oper:string,
         if(!isNaN(Number(input))){
             let validatedResult : number|string = validateOprends(input,oper,index,initialResult);
             let value :number = validatedResult as number;
+            if(oper === "square root"){
+                console.log(`Result of ${oper} of ${value} is : ${callBack(initialResult,value)}`);
+            }
             if(initialResult === 0 && index ===1 ){
                 initialResult  = setupInitialResult(oper, input);
                 if(oper === "modulo"){ value += 1}
                 else if (oper === "exponintial operation" ){value = 1}
                 console.log(`Initial operand obtained to perform ${oper} is : `,
                 `${initialResult = callBack(initialResult,value)}`);
-            }else if(oper === "square root"){
-                console.log(`Result of ${oper} of ${value} is : ${callBack(initialResult,value)}`)
             }
             else{
                 console.log(`Result obtained by performing ${oper}`,
