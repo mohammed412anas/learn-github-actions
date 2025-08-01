@@ -100,4 +100,15 @@ describe("test suit of main.ts module",()=>{
         expect(factorialResult).toEqual(24);
     });
 
+    test("should take first prompt value as 9 and perform mathematical calculation of expression '10 + 30 * (4 ^ 2) - sqrt(49)' and return result as 483",()=>{
+        mockedPrompt
+            .mockReturnValueOnce("9")
+            .mockReturnValueOnce("10 + 30 * (4 ^ 2) - sqrt(49)")
+            .mockReturnValueOnce("exit");
+
+        let expressionResult : number = mathOpreations();
+
+        expect(expressionResult).toEqual(483);
+    });
+
 });
