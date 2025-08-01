@@ -20,8 +20,8 @@ Welcome to simple calculator the app have the following features.
 
  Expression Evaluation
   9.Evaluate math expression.
-
-(Enter 'exit' to exit from app)
+(Enter 'back' to come to home.)
+(Enter 'exit' to exit from app.)
 `);
 
 export function mathOpreations():number{
@@ -47,9 +47,18 @@ export function mathOpreations():number{
         case '9':
             return calculateExpression();
         default:
-            return mathOpreations();
+            if(userChoice.toLowerCase() === "exit"){
+                throw  "Came out of app"
+            }else {
+                return mathOpreations()
+            };
             
     };
 };
 
 
+if(require.main === module){
+    while(true){
+        mathOpreations();
+    };
+};
