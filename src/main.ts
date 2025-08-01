@@ -42,6 +42,8 @@ export function mathOpreations():number{
             return manageOperendsAndOperations("exponintial operation",operations.power);
         case '7':
             return manageOperendsAndOperations("square root", operations.square_root);
+        case '8':
+            return manageOperendsAndOperations("factorial",operations.factorial)
         default:
             return 0;
             
@@ -49,4 +51,3 @@ export function mathOpreations():number{
 };
 
 
-mathOpreations()
