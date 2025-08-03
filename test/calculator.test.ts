@@ -81,7 +81,7 @@ describe("test suit of calculator.ts module",()=>{
         expect(result).toEqual(123456789)
     });
 
-    test("should runApp run the app continuously run three times with three mocked expressions and exit the app when the mocked prompt value is 'EXIT'.",()=>{
+    test("should runApp run the app continuously run three times with three mocked expressions and come back from to home when the mocked prompt value is 'back'.",()=>{
         mockedPrompt    
             .mockReturnValueOnce("10+20+30")
             .mockReturnValueOnce("40+50+60")
@@ -92,5 +92,16 @@ describe("test suit of calculator.ts module",()=>{
         let isAppRunning : number = calculateExpression()
 
         expect(isAppRunning).toEqual(600)
-    })
+    });
+
+    test("should perform expression evaluation by taking initial valid expression as '9+9' and then take invalid expression with missed operend '9* ' and console error message and take 'back' as input and come back to home and return previous result as '18'.",()=>{
+        mockedPrompt    
+            .mockReturnValueOnce("9+9")
+            .mockReturnValueOnce("9* ")
+            .mockReturnValueOnce("back");
+        
+        let isAppRunning : number = calculateExpression();
+
+        expect(isAppRunning).toEqual(18);
+    });
 });
