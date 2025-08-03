@@ -1,6 +1,6 @@
 # Simple Calculator
 
-A TypeScript-based command-line calculator that evaluates mathematical expressions including basic arithmetic operations, scientific functions, and complex mathematical expressions.
+A TypeScript-based command-line calculator that evaluates mathematical operations including basic arithmetic operations, scientific functions, and complex mathematical expressions.
 
 ---
 ## Table of Contents
@@ -9,6 +9,7 @@ A TypeScript-based command-line calculator that evaluates mathematical expressio
 - [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
+- [Tech-Stack](#tech-stack)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [License](#licence)
@@ -37,33 +38,15 @@ npm install
 # To run the application in CLI run the command from the project directory.
 npm run dev
 # or
-tsc && node dist/calculator.js
+tsc && node dist/main.js
 ```
 
-The calculator will start in interactive mode and prompt you to enter mathematical expressions:
-
-```bash
-Enter the expression to calculate : 10 + 20
-Result : 30
-
-Enter the expression to calculate : sqrt(16) + 2^3
-Result : 12
-
-Enter the expression to calculate : 5! / 2
-Result : 60
-
-Enter the expression to calculate : (10 + 5) * 2 - 3^2
-Result : 21
-
-Enter the expression to calculate : exit
-```
 
 ### Supported Operations
 
-- Basic arithmetic: `+`, `-`, `*`, `/`, `%`, `^`
-- Scientific functions: `sqrt()`, factorial (`!`)
-- Complex expressions with parentheses and operator precedence
-- Numbers with quotes are automatically filtered
+- Basic arithmetic: `+`, `-`, `*`, `/`, `%`, `^` or `**`.
+- Scientific functions: `sqrt()`, factorial (`!`).
+- Numbers with quotes are automatically filtered.
 
 
 ## Testing 
@@ -79,6 +62,10 @@ npm run coverage
 
 ```
 
+## Tech-Stack
+
+- Typescript
+- NodeJs
 
 
 ## Dependencies(Dev)
@@ -86,6 +73,7 @@ npm run coverage
 - `prompt-sync`: Interactive command-line input.
 - `mathjs`: Mathematical expression evaluation.
 - `jest`: Testing framework .
+- `ts-node`: To automatically transpile and run Typescript file.
 
 
 ## Contributing
