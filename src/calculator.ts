@@ -7,15 +7,14 @@ export function takeInput(description : string):string{
     return prompt(description)
 }
 export function calculate(expression:string):number|string|object{
-    
+    let result : number | string;
     try{
-        let result :number =evaluate(expression);
-        console.log(`Result : ${result}`)
+        result  = evaluate(expression) as number;  
         return result; 
     }
     catch(err){
-        console.log(`Invalid expression : ${(err as Error).message}`)
-        return `Invalid expression : ${(err as Error).message}`;
+        result = `Invalid expression : ${(err as Error).message}` as string;
+        return result;
     }
 }
 
@@ -26,10 +25,14 @@ export function calculateExpression(result:number = 0):number{
             calculate(expression);
             if(!isNaN(calculate(expression) as number)){
                 result = calculate(expression) as number;
-            };
+                console.log(`Result : ${result}`);
+            }else{
+                let error : string = calculate(expression) as string;
+                console.log(`${error}`);
+            }
         }else{
             return result;
-        }
-    }
-}
+        };
+    };
+};
 
