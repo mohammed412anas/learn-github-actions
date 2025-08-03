@@ -76,4 +76,10 @@ describe("test suit of operation.ts module",()=>{
 
         expect(factorial).toEqual(1);
     });
+
+    test("should return the factorial value of -4 as -24",()=>{
+        let factorial : number = calculation.factorial(-4,-24);
+
+        expect(factorial).toEqual(-24);
+    });
 });
