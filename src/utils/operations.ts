@@ -42,6 +42,13 @@ export class Operations {
     factorial(a : number , b : number):number{
         if (a === 0){return 1};
         let result : number = 1;
+        if(a < 0){
+            a =- (a);
+            for(a ; a > 0 ; a--){
+            result *= a;
+            }
+            return -result;
+        }
         for(a ; a > 0 ; a--){
             result *= a;
         }
