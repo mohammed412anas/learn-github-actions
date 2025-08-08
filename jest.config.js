@@ -8,4 +8,12 @@ module.exports = {
   transform: {
     ...tsJestTransformCfg,
   },
+  coverageThreshold:{
+    global:{
+      lines:95,
+      statements:100,
+      branches:100,
+      functions:100
+    }
+  }
 };
