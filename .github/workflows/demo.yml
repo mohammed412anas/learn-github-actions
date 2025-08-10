@@ -2,9 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-runners
-
+  runs-on: ubuntu-runners
   Explore-GitHub-Actions:
     
     steps:
