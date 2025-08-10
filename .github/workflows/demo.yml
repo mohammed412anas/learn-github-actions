@@ -3,9 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   check-bats-version:
-    runs-on:
-      group: ubuntu-runners
-      labels: ubuntu-20.04-16core
+    runs-on: ubuntu-runners
+
   Explore-GitHub-Actions:
     
     steps:
