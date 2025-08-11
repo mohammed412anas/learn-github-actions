@@ -13,7 +13,7 @@ describe("test suit of main.ts module",()=>{
             .mockReturnValueOnce("5")
             .mockReturnValueOnce("back");
 
-        let sum : number = mathOpreations();
+        let sum : number = mathOpreations()
 
         expect(sum).toEqual(5);
     });
