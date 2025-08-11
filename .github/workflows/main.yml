@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: console-message
-      - runs: echo "Hello Anas"
+        run: echo "Hello Anas"
