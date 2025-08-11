@@ -21,8 +21,8 @@ jobs:
 
     steps:
 
-      # - name: Checkout to clculator
-      #   uses: actions/checkout@v4
+      - name: Checkout to clculator
+        uses: actions/checkout@v4
 
       # - name: Install dependencies
       #   run: npm install
