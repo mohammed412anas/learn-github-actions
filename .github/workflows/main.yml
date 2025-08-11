@@ -3,9 +3,11 @@ name: CI/CD workflow for clculator
 on: [push]
 
 jobs:
-  my_main_job:
+    build:
     runs-on: ubuntu-latest
 
     steps:
       name: console-message
       run: echo "Hello Anas"
+
+    
