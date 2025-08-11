@@ -6,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: console-message
-      run: echo "Hello Anas"
+    steps:
+      - name: console-message
+        run: echo "Hello Anas"
 
     
