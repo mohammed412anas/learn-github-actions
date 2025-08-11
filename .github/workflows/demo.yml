@@ -4,7 +4,7 @@ on: [push]
 jobs:
   
   Explore-GitHub-Actions:
-    runs-on: ${{ matrix }}
+    runs-on: ${{matrix}}
     strategy:
       matrix:
       os: [ubuntu-latest, window-latest, macOS-latest]
