@@ -10,6 +10,8 @@ jobs:
 
       - name: Checkout to clculator
         uses: actions/checkout@v4
+
+      - name: setup environment
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
