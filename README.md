@@ -1,6 +1,6 @@
 # Simple Calculator
 
-A TypeScript-based command-line calculator that evaluates mathematical operations including basic arithmetic operations, scientific functions, and complex mathematical expressions.
+A TypeScript-based command-line calculator that evaluates mathematical operations including basic arithmetic operations, scientific functions like factorial calculation, and complex mathematical expressions.
 
 ---
 ## Table of Contents
