@@ -25,7 +25,7 @@ describe("test suit of main.ts module",()=>{
             .mockReturnValueOnce("5")
             .mockReturnValueOnce("back");
 
-        let difference : number = mathOpreations()
+        let difference : number = mathOpreations();
 
         expect(difference).toEqual(5);
     });
