@@ -1,6 +1,6 @@
 name: CI/CD workflow for clculator
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   Build:
@@ -21,7 +21,7 @@ jobs:
         run: npm run coverage
 
       - name: Deploy
-        run: echo "App successfully deployed"
+        run: echo "App successfully deployed."
 
 
   
