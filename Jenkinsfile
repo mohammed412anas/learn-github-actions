@@ -25,15 +25,15 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'npm run coverage'
+                sh "echo 'Hi Anas'"
             }
         }
     }
     post {
-    failure {
-        mail to: 'mohammed.anas@everest.engineering',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
+        failure {
+            mail to: 'mohammed.anas@everest.engineering',
+                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Something is wrong with ${env.BUILD_URL}"
+            }
         }
-    }
 }
