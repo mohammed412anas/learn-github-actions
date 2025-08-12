@@ -25,7 +25,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh "echo 'Hi Anas'"
+                sh 'npm run coverage'
             }
         }
     }

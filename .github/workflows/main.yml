@@ -1,15 +1,15 @@
 name: CI/CD workflow for clculator
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
 
     steps:
 
-      - name: Checkout to clculator
-        uses: actions/checkout@v1
+      - name: Checkout to calculator
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
@@ -20,10 +20,14 @@ jobs:
       - name: Test
         run: npm run coverage
 
+  Deploy:
+    needs: [Build]
+    runs-on: [windows-latest]
+
+    steps:
+
+      - name: Checkout to calculator
+        uses: actions/checkout@v4
+
       - name: Deploy
-        run: echo "App successfully deployed."
-
-
-  
-
-    
+        run: echo "App successfully deployed"
