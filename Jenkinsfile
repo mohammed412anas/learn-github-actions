@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Console message') {
             steps {
-                echo 'Hello Anas! finally I have done'
+                echo 'Hello Anas! finally '
             }
     
         }
