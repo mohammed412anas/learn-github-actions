@@ -8,26 +8,28 @@ pipeline {
         stage('Checkout to project') {
             steps{
                 checkout scmGit(branches: [[name: 'feat/implement-feedback']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-example-git-ssh', url: 'git@github.com:mohammed412anas/calculator.git']])
+                echo 'This is from branch main'
             }
+            
         }
         
-        stage('Install dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
+        // stage('Install dependencies') {
+        //     steps {
+        //         sh 'npm install'
+        //     }
+        // }
         
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'npm run build'
+        //     }
+        // }
         
-        stage('Test') {
-            steps {
-                sh 'npm run coverage'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'npm run coverage'
+        //     }
+        // }
     }
     post {
         failure {
