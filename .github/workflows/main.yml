@@ -1,6 +1,6 @@
-name: CI/CD workflow for clculator
+name: CI
 
-on: [pull_request]
+on: [push,workflow_dispatch]
 
 jobs:
   Build:
